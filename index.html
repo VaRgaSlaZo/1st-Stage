@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josué Vargas - Personal Portfolio</title>
-    <style>
+<style>
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,7 +21,7 @@
             align-items: center;
             justify-content: flex-start;
         }
-        /* Video Background en Bucle */
+
         #bg-video {
             position: fixed;
             right: 0;
@@ -32,40 +32,39 @@
             height: auto;
             z-index: -100;
             object-fit: cover;
-            opacity: 0.28; /* Opacidad optimizada para lectura premium */
-            filter: grayscale(25%) brightness(75%);
+            opacity: 0.28;
+            filter: grayscale(40%) brightness(75%);
         }
-        /* Main Container */
+ 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             width: 90%;
-            margin: 60px auto;
+            margin: 40px auto;
             z-index: 1;
         }
-        /* Header Section */
+   
         header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         header h1 {
-            font-size: 4rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            letter-spacing: -1.5px;
-            margin-bottom: 12px;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
             background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         header p {
-            font-size: 1.35rem;
+            font-size: 1.05rem;
             color: #b0b0b0;
-            font-weight: 400;
         }
-        /* Section Titles */
+
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin: 45px 0 20px 0;
+            margin: 35px 0 15px 0;
             color: #ffffff;
             display: flex;
             align-items: center;
@@ -76,35 +75,34 @@
             content: '';
             display: inline-block;
             width: 5px;
-            height: 26px;
+            height: 22px;
             background: linear-gradient(to bottom, #ffffff, #555555);
             border-radius: 3px;
         }
-        /* Glassmorphism Cards */
+        /* Glassmorphism Cards - COMPACTO */
         .card {
             background: rgba(18, 18, 18, 0.65);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 25px;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
         }
         .card:hover {
             transform: translateY(-4px);
             border-color: rgba(255, 255, 255, 0.18);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
         }
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 10px;
             color: #ffffff;
         }
         .card p {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             line-height: 1.65;
             color: #cdcdcd;
         }
@@ -119,7 +117,7 @@
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
         }
-        /* Tags for About Me */
+
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -145,7 +143,7 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: opacity 0.2s;
+            transition: background 0.2s;
             background: rgba(255, 255, 255, 0.08);
             padding: 8px 16px;
             border-radius: 8px;
@@ -163,36 +161,30 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 60px;
         }
-        /* Responsive design */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
                 grid-template-columns: 1fr;
             }
             header h1 {
-                font-size: 2.8rem;
-            }
-            .card {
-                padding: 22px;
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Video en bucle infinito de fondo -->
     <video autoplay muted loop id="bg-video">
         <source src="ULT_STORM.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <div class="container">
-        <!-- Main Title -->
+  
         <header>
             <h1>Josué Vargas</h1>
             <p>Computer Science Student & Software Developer</p>
         </header>
 
-        <!-- Section: Profile -->
         <div class="card">
             <h3>About Me</h3>
             <p style="margin-top: 10px;">I am a Computer Science student, a developer in development, an EDM producer (in development too), a Guitar Flash Pro Player, and overall a good person.</p>
@@ -223,7 +215,6 @@
     </div>
 </div>
 
-        <!-- Section 1: Courses & Training -->
         <h2 class="section-title">Courses & Training</h2>
         <div class="grid-3">
             <div class="card">
@@ -252,7 +243,6 @@
             </div>
         </div>
 
-        <!-- Section 2: Faculty & Mentors -->
         <h2 class="section-title">Faculty & Professors</h2>
         <div class="grid-2">
             <div class="card">
@@ -271,7 +261,6 @@
             </div>
         </div>
 
-        <!-- Section 3: Peer Network / Friends' Pages -->
         <h2 class="section-title">My Partners & Contacts</h2>
         <div class="grid-3">
             <div class="card">
