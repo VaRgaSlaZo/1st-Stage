@@ -21,7 +21,7 @@
             align-items: center;
             justify-content: flex-start;
         }
-        
+        /* Video Background */
         #bg-video {
             position: fixed;
             right: 0;
@@ -33,22 +33,22 @@
             z-index: -100;
             object-fit: cover;
             opacity: 0.9;
-            filter: grayscale(8%) brightness(94%);
+            filter: grayscale(5%) brightness(97%);
         }
-        
+        /* Main Container - COMPACTO */
         .container {
-            max-width: 720px; 
+            max-width: 1200px;
             width: 90%;
-            margin: 50px auto;
+            margin: 40px auto;
             z-index: 1;
         }
-        
+        /* Header Section - COMPACTO */
         header {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
         header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -1px;
             margin-bottom: 8px;
@@ -57,14 +57,14 @@
             -webkit-text-fill-color: transparent;
         }
         header p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: #b0b0b0;
         }
-     
+        /* Section Titles - COMPACTO */
         .section-title {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin: 40px 0 20px 0;
+            margin: 35px 0 15px 0;
             color: #ffffff;
             display: flex;
             align-items: center;
@@ -75,19 +75,19 @@
             content: '';
             display: inline-block;
             width: 5px;
-            height: 24px;
+            height: 22px;
             background: linear-gradient(to bottom, #ffffff, #555555);
             border-radius: 3px;
         }
-
+        /* Glassmorphism Cards - COMPACTO */
         .card {
             background: rgba(18, 18, 18, 0.65);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.07);
-            border-radius: 16px;
-            padding: 28px 32px; 
-            margin-bottom: 25px;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
         }
@@ -96,23 +96,28 @@
             border-color: rgba(255, 255, 255, 0.18);
         }
         .card h3 {
-            font-size: 1.4rem; 
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #ffffff;
         }
         .card p {
-            font-size: 1.15rem; 
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.65;
             color: #cdcdcd;
         }
-     
-        .grid-2, .grid-3 {
+        /* Grid Layouts */
+        .grid-2 {
             display: grid;
-            grid-template-columns: 1fr; 
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
         }
-
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        /* Tags for About Me */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -122,13 +127,13 @@
         .tag {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.09);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #e0e0e0;
             font-weight: 500;
         }
-
+        /* Links and Buttons */
         .lnk-btn {
             display: inline-flex;
             align-items: center;
@@ -136,25 +141,33 @@
             margin-top: 15px;
             color: #ffffff;
             text-decoration: none;
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 500;
             transition: background 0.2s;
             background: rgba(255, 255, 255, 0.08);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .lnk-btn:hover {
             background: rgba(255, 255, 255, 0.15);
         }
-
+        /* Footer */
         footer {
             text-align: center;
             padding: 50px 0 30px 0;
             color: #555555;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
