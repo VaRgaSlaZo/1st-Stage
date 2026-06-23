@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Josué Vargas - Personal Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-color: #060606;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        /* Video Background en Bucle */
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            object-fit: cover;
+            opacity: 0.28; /* Opacidad optimizada para lectura premium */
+            filter: grayscale(40%) brightness(50%);
+        }
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            margin: 60px auto;
+            z-index: 1;
+        }
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header p {
+            font-size: 1.35rem;
+            color: #b0b0b0;
+            font-weight: 400;
+        }
+        /* Section Titles */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 45px 0 20px 0;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.5px;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 26px;
+            background: linear-gradient(to bottom, #ffffff, #555555);
+            border-radius: 3px;
+        }
+        /* Glassmorphism Cards */
+        .card {
+            background: rgba(18, 18, 18, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card p {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #cdcdcd;
+        }
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        /* Tags for About Me */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+        /* Links and Buttons */
+        .lnk-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .lnk-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 0 30px 0;
+            color: #555555;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 60px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.8rem;
+            }
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video en bucle infinito de fondo -->
+    <video autoplay muted loop id="bg-video">
+        <source src="ULT_STORM.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <!-- Main Title -->
+        <header>
+            <h1>Josué Vargas</h1>
+            <p>Computer Science Student & Software Developer</p>
+        </header>
+
+        <!-- Section: Profile -->
+        <div class="card">
+            <h3>About Me</h3>
+            <p style="margin-top: 10px;">I am a Computer Science student, a developer in development, an EDM producer (in development too), a Guitar Flash Pro Player, and overall a good person.</p>
+            <p style="margin-top: 12px;">Currently studying at <strong>UCSP</strong> aspiring to acquire a Computer Science Major degree. The career follows the global curriculum guidelines of the ACM and the IEEE.</p>
+            <div class="tags">
+                <span class="tag">💻 Computer Science</span>
+                <span class="tag">⚙️ Developer</span>
+                <span class="tag">🎵 EDM Production</span>
+                <span class="tag">🎸 Guitar Flash Pro</span>
+                <span class="tag">🤝 Good Person</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Courses & Training -->
+        <h2 class="section-title">Courses & Training</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Introduction to Computer Science</h3>
+                <p>An overview of computing history, foundational pillars of data structures, and tech evolution aligned with global standards.</p>
+            </div>
+            <div class="card">
+                <h3>Fundamentals of Programming</h3>
+                <p>Core programming methodologies, algorithm architecture, and design patterns focused on robust problem solving.</p>
+            </div>
+            <div class="card">
+                <h3>Mathematical Fundamentals</h3>
+                <p>Discrete mathematical structures, truth tables, and mathematical foundations tailored for advanced computation.</p>
+            </div>
+            <div class="card">
+                <h3>Logic</h3>
+                <p>Formal propositional and predicate logic, inductive reasoning, and analysis of structured argument models.</p>
+            </div>
+            <div class="card">
+                <h3>Communication</h3>
+                <p>Enhancing critical academic reading, written synthesis, and elite professional communication skills.</p>
+            </div>
+            <div class="card">
+                <h3>University Life Intro</h3>
+                <p>Integration into the academic ecosystem, corporate ethics, humanism, and personal goal-mapping within UCSP.</p>
+            </div>
+        </div>
+
+        <!-- Section 2: Faculty & Mentors -->
+        <h2 class="section-title">Faculty & Professors</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>Dr. Ernesto Cuadros Vargas</h3>
+                <p>Renowned professor and pioneer in Computer Science curriculum development. Leading expert across international ACM/IEEE education boards.</p>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="lnk-btn">
+                    <span>Connect on LinkedIn</span> ↗
+                </a>
+            </div>
+            <div class="card">
+                <h3>Prof. Kelly Vizconde La Motta</h3>
+                <p>Distinguished professor dedicated to professional communication strategies, academic integration, and institutional development.</p>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="lnk-btn">
+                    <span>Connect on LinkedIn</span> ↗
+                </a>
+            </div>
+        </div>
+
+        <!-- Section 3: Peer Network / Friends' Pages -->
+        <h2 class="section-title">Peer Network & Friends</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Yul Villena</h3>
+                <p>Personal portfolio and academic blog of Yul Villena, Computer Science classmate.</p>
+                <a href="https://yulvillena-source.github.io/Yul_Villena/" target="_blank" rel="noopener noreferrer" class="lnk-btn">
+                    <span>Visit Portfolio</span> ↗
+                </a>
+            </div>
+            <div class="card">
+                <h3>Classmate Portfolios</h3>
+                <p>Discover portfolios, open-source code repositories, and collaborative projects from our academic circle.</p>
+                <a href="#" class="lnk-btn" style="opacity: 0.6; pointer-events: none;">
+                    <span>Directory Coming Soon</span>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Josué Vargas • Built with Passion & Premium Code Structure</p>
+        </footer>
+    </div>
+
+</body>
+</html>
